@@ -12,6 +12,7 @@ from datetime import datetime
 import logging
 import re
 import urllib3
+import pytz
 
 # Configuración de logging
 logging.basicConfig(
@@ -154,10 +155,15 @@ class BCVDolarScraper:
         Guarda el precio en el archivo JSON
         """
         try:
+            # Obtener hora de Venezuela (UTC-4)
+            venezuela_tz = pytz.timezone('America/Caracas')
+            now_venezuela = datetime.now(venezuela_tz)
+            
             data_entry = {
-                'fecha': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                'fecha': now_venezuela.strftime('%Y-%m-%d %H:%M:%S'),
                 'precio_dolar': price,
-                'timestamp': datetime.now().isoformat()
+                'timestamp': now_venezuela.isoformat(),
+                'zona_horaria': 'America/Caracas (UTC-4)'
             }
             
             if os.path.exists(self.data_file):
