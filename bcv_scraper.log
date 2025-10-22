@@ -1,0 +1,37 @@
+2025-10-22 00:16:06,742 - INFO - Iniciando extracción del precio del dólar del BCV
+2025-10-22 00:16:06,743 - INFO - Accediendo a https://www.bcv.org.ve/
+2025-10-22 00:16:07,243 - ERROR - Error al acceder a la página del BCV: HTTPSConnectionPool(host='www.bcv.org.ve', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1028)')))
+2025-10-22 00:16:07,244 - ERROR - No se pudo obtener el precio del dólar
+2025-10-22 00:16:20,230 - INFO - Iniciando extracción del precio del dólar del BCV
+2025-10-22 00:16:20,235 - INFO - Accediendo a https://www.bcv.org.ve/
+2025-10-22 00:16:50,663 - ERROR - Error al acceder a la página del BCV: HTTPSConnectionPool(host='www.bcv.org.ve', port=443): Read timed out. (read timeout=30)
+2025-10-22 00:16:50,663 - ERROR - No se pudo obtener el precio del dólar
+2025-10-22 00:17:22,573 - INFO - Iniciando extracción del precio del dólar del BCV
+2025-10-22 00:17:22,573 - INFO - Accediendo a https://www.bcv.org.ve/
+2025-10-22 00:17:24,041 - WARNING - No se encontró el precio del dólar en la página
+2025-10-22 00:17:24,043 - ERROR - No se pudo obtener el precio del dólar
+2025-10-22 00:17:37,763 - INFO - Iniciando extracción del precio del dólar del BCV
+2025-10-22 00:17:37,764 - INFO - Accediendo a https://www.bcv.org.ve/
+2025-10-22 00:17:38,819 - INFO - HTML guardado en bcv_debug.html para inspección
+2025-10-22 00:17:38,876 - WARNING - No se encontró el precio del dólar en la página
+2025-10-22 00:17:38,878 - ERROR - No se pudo obtener el precio del dólar
+2025-10-22 00:17:59,248 - INFO - Iniciando extracción del precio del dólar del BCV
+2025-10-22 00:17:59,249 - INFO - Accediendo a https://www.bcv.org.ve/
+2025-10-22 00:18:00,498 - INFO - HTML guardado en bcv_debug.html para inspección
+2025-10-22 00:18:00,500 - INFO - Precio encontrado en div#dolar: 210,28250000
+2025-10-22 00:18:00,500 - INFO - Precio del dólar encontrado: 210,28250000
+2025-10-22 00:18:00,502 - INFO - Precio guardado exitosamente: 21028250000.0 Bs
+2025-10-22 00:18:00,503 - INFO - Proceso completado exitosamente
+2025-10-22 00:18:15,874 - INFO - Iniciando extracción del precio del dólar del BCV
+2025-10-22 00:18:15,875 - INFO - Accediendo a https://www.bcv.org.ve/
+2025-10-22 00:18:16,972 - INFO - HTML guardado en bcv_debug.html para inspección
+2025-10-22 00:18:16,974 - INFO - Precio encontrado en div#dolar: 210,28250000
+2025-10-22 00:18:16,974 - INFO - Precio del dólar encontrado: 210,28250000
+2025-10-22 00:18:16,976 - INFO - Precio guardado exitosamente: 210.2825 Bs
+2025-10-22 00:18:16,976 - INFO - Proceso completado exitosamente
+2025-10-22 00:18:35,799 - INFO - Iniciando extracción del precio del dólar del BCV
+2025-10-22 00:18:35,799 - INFO - Accediendo a https://www.bcv.org.ve/
+2025-10-22 00:18:37,288 - INFO - Precio encontrado en div#dolar: 210,28250000
+2025-10-22 00:18:37,288 - INFO - Precio del dólar encontrado: 210,28250000
+2025-10-22 00:18:37,291 - INFO - Precio guardado exitosamente: 210.2825 Bs
+2025-10-22 00:18:37,291 - INFO - Proceso completado exitosamente
