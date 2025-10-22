@@ -15,20 +15,37 @@ jobs:
     steps:
     - name: Checkout código
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Obtener todo el historial
       
     - name: Configurar Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.11'
         
-    - name: Instalar dependencias
+    - name: Instalar dependencias del sistema
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libxml2-dev libxslt1-dev
+        
+    - name: Instalar dependencias Python
       run: |
         python -m pip install --upgrade pip
+        pip install --upgrade setuptools wheel
         pip install -r requirements.txt
+        
+    - name: Verificar archivos
+      run: |
+        echo "Archivos en el directorio:"
+        ls -la
+        echo "Contenido de requirements.txt:"
+        cat requirements.txt
         
     - name: Ejecutar scraper
       run: |
+        echo "Ejecutando scraper..."
         python bcv_scraper.py
+        echo "Scraper completado"
         
     - name: Verificar archivo JSON
       run: |
@@ -38,7 +55,18 @@ jobs:
           cat precio_dolar_bcv.json
         else
           echo "❌ Error: No se encontró el archivo JSON"
+          echo "Archivos disponibles:"
+          ls -la
           exit 1
+        fi
+        
+    - name: Verificar logs
+      run: |
+        if [ -f "bcv_scraper.log" ]; then
+          echo "📋 Logs del scraper:"
+          cat bcv_scraper.log
+        else
+          echo "⚠️ No se encontró el archivo de log"
         fi
         
     - name: Subir cambios al repositorio
@@ -46,7 +74,11 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add precio_dolar_bcv.json bcv_scraper.log
-        git diff --staged --quiet || git commit -m "Actualizar precio del dólar - $(date)"
-        git push
+        if git diff --staged --quiet; then
+          echo "No hay cambios para commitear"
+        else
+          git commit -m "Actualizar precio del dólar - $(date '+%Y-%m-%d %H:%M:%S')"
+          git push
+        fi
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
