@@ -77,8 +77,14 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
+        # Verificar si el secret existe
+        if [ -z "${{ secrets.GH_PAT }}" ]; then
+          echo "❌ Error: GH_PAT secret no está configurado"
+          exit 1
+        fi
+        
         # Configurar URL con PAT
-        git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/luisparedes29/bcv-dolar-scraper.git
+        git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git
         
         # Verificar si hay cambios
         git add precio_dolar_bcv.json bcv_scraper.log
