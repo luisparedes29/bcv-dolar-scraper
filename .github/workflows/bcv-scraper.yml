@@ -77,6 +77,9 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
+        # Configurar URL con PAT
+        git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/luisparedes29/bcv-dolar-scraper.git
+        
         # Verificar si hay cambios
         git add precio_dolar_bcv.json bcv_scraper.log
         
