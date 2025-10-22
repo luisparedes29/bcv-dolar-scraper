@@ -11,6 +11,9 @@ on:
 jobs:
   scrape-dolar:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
     
     steps:
     - name: Checkout código
@@ -73,12 +76,18 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+        
+        # Verificar si hay cambios
         git add precio_dolar_bcv.json bcv_scraper.log
+        
         if git diff --staged --quiet; then
           echo "No hay cambios para commitear"
         else
+          echo "Hay cambios, creando commit..."
           git commit -m "Actualizar precio del dólar - $(date '+%Y-%m-%d %H:%M:%S')"
-          git push
+          
+          echo "Haciendo push al repositorio..."
+          git push origin main
+          
+          echo "✅ Cambios subidos exitosamente"
         fi
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
