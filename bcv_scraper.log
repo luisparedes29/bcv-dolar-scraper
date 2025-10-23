@@ -53,3 +53,21 @@
 2025-10-22 22:20:10,592 - INFO - Precio del dÃ³lar encontrado: 212,48370000
 2025-10-22 22:20:10,594 - INFO - Precio guardado exitosamente: 212.4837 Bs
 2025-10-22 22:20:10,594 - INFO - Proceso completado exitosamente
+2025-10-22 20:51:43,377 - INFO - Accediendo a https://www.bcv.org.ve/
+2025-10-22 20:51:44,510 - INFO - Precio encontrado: 212,48370000
+2025-10-22 20:51:57,734 - INFO - Precio guardado: 212.4837 Bs
+2025-10-22 20:52:24,182 - INFO - Iniciando extracción del precio del dólar del BCV
+2025-10-22 20:52:24,182 - INFO - Accediendo a https://www.bcv.org.ve/
+2025-10-22 20:52:25,062 - INFO - Precio encontrado: 212,48370000
+2025-10-22 20:52:25,214 - INFO - Precio guardado: 212.4837 Bs
+2025-10-22 20:52:25,214 - INFO - Proceso completado exitosamente
+2025-10-22 20:55:58,974 - INFO - Iniciando extracción del precio del dólar del BCV
+2025-10-22 20:55:58,974 - INFO - Accediendo a https://www.bcv.org.ve/
+2025-10-22 20:55:59,814 - INFO - Precio encontrado: 212,48370000
+2025-10-22 20:55:59,914 - INFO - Precio guardado: 212.4837 Bs
+2025-10-22 20:55:59,914 - INFO - Proceso completado exitosamente
+2025-10-22 20:57:27,555 - INFO - Iniciando extracción del precio del dólar del BCV
+2025-10-22 20:57:27,555 - INFO - Accediendo a https://www.bcv.org.ve/
+2025-10-22 20:57:28,503 - INFO - Precio encontrado: 212,48370000
+2025-10-22 20:57:28,651 - INFO - Precio guardado: 212.4837 Bs
+2025-10-22 20:57:28,651 - INFO - Proceso completado exitosamente
