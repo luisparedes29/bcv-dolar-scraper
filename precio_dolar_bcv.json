@@ -24,5 +24,15 @@
         "precio_dolar": 210.2825,
         "timestamp": "2025-10-22T00:54:43.219957-04:00",
         "zona_horaria": "America/Caracas (UTC-4)"
+    },
+    {
+        "fecha": "2025-10-22 04:51:51",
+        "precio_dolar": 210.2825,
+        "timestamp": "2025-10-22T04:51:51.696041"
+    },
+    {
+        "fecha": "2025-10-22 22:20:10",
+        "precio_dolar": 212.4837,
+        "timestamp": "2025-10-22T22:20:10.593759"
     }
 ]
