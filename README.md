@@ -1,94 +1,255 @@
-# Proyecto BCV - Extractor de Precio del Dólar
+# 🇻🇪 BCV Dólar Scraper
 
-Este proyecto automatiza la extracción diaria del precio del dólar desde el sitio web del Banco Central de Venezuela (BCV) y lo guarda en un archivo JSON.
+**Extractor automático del precio del dólar del Banco Central de Venezuela (BCV)**
 
-## Características
+Este proyecto automatiza la extracción diaria del precio del dólar desde el sitio web del BCV y lo almacena en un archivo JSON con timestamps precisos y lógica de fechas correcta.
 
-- ✅ Extracción automática del precio del dólar del BCV
-- ✅ Guardado en archivo JSON con timestamp
-- ✅ Logging detallado de todas las operaciones
-- ✅ Múltiples métodos de búsqueda para mayor robustez
-- ✅ Manejo de errores y reintentos
-- ✅ Programación para ejecución diaria a las 6 PM
+## ✨ Características Principales
 
-## Archivos del Proyecto
+- 🎯 **Extracción Automática**: Obtiene el precio del dólar del BCV automáticamente
+- 📅 **Lógica de Fechas Inteligente**: Distingue entre fecha de extracción y fecha del precio
+- 🔄 **Múltiples Paradigmas**: Versiones funcional, OOP y Clean Code
+- 📊 **Almacenamiento JSON**: Historial completo con timestamps
+- 🛡️ **Robusto**: Múltiples estrategias de búsqueda y manejo de errores
+- 📝 **Logging Detallado**: Registro completo de todas las operaciones
+- ⚡ **Fácil Uso**: Scripts de ejecución automática
 
-- `bcv_scraper.py` - Script principal de extracción
-- `requirements.txt` - Dependencias de Python
-- `ejecutar.bat` - Script de Windows para ejecución fácil
-- `README.md` - Este archivo de documentación
+## 🏗️ Arquitectura del Proyecto
 
-## Instalación y Uso
+### 📁 Estructura de Archivos
 
-### Método 1: Ejecución Automática (Recomendado)
-1. Doble clic en `ejecutar.bat`
-2. El script instalará las dependencias automáticamente
-3. Ejecutará la extracción del precio del dólar
-
-### Método 2: Ejecución Manual
-1. Instalar dependencias:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-2. Ejecutar el script:
-   ```bash
-   python bcv_scraper.py
-   ```
-
-## Programación Automática (Tarea Diaria a las 6 PM)
-
-### En Windows:
-1. Abrir "Programador de tareas" (Task Scheduler)
-2. Crear tarea básica
-3. Configurar:
-   - **Nombre**: "BCV Dólar Scraper"
-   - **Frecuencia**: Diaria
-   - **Hora**: 18:00 (6 PM)
-   - **Acción**: Iniciar programa
-   - **Programa**: `python`
-   - **Argumentos**: `C:\Users\luis_\Desktop\ProyectoBCV\bcv_scraper.py`
-   - **Directorio**: `C:\Users\luis_\Desktop\ProyectoBCV`
-
-### En Linux/Mac:
-```bash
-# Editar crontab
-crontab -e
-
-# Agregar esta línea para ejecutar todos los días a las 6 PM:
-0 18 * * * /usr/bin/python3 /ruta/completa/al/ProyectoBCV/bcv_scraper.py
+```
+ProyectoBCV/
+├── 📄 bcv_scraper.py              # ✅ Script principal (Funcional)
+├── 📄 config.py                  # ⚙️ Configuración centralizada
+├── 📄 utils.py                   # 🔧 Utilidades reutilizables
+├── 📄 requirements.txt           # 📦 Dependencias
+├── 📄 ejecutar.bat              # 🚀 Script de ejecución (Windows)
+├── 📄 configurar_tarea.bat      # ⏰ Configuración de tarea programada
+├── 📄 subir_a_github.bat        # 📤 Script para subir a GitHub
+├── 📄 precio_dolar_bcv.json     # 💾 Datos extraídos
+├── 📄 bcv_scraper.log           # 📝 Log de operaciones
+└── 📄 README.md                 # 📖 Esta documentación
 ```
 
-## Archivos Generados
+### 🎯 Versión Actual
 
-- `precio_dolar_bcv.json` - Archivo con todos los precios extraídos
-- `bcv_scraper.log` - Log de todas las operaciones
+**`bcv_scraper.py`** - Script principal con paradigma funcional
+- ✅ **Simple y directo**: Código limpio y fácil de entender
+- ✅ **Funciones puras**: Sin efectos secundarios, fáciles de testear
+- ✅ **Inmutabilidad**: Previene bugs y facilita debugging
+- ✅ **Composición**: Funciones pequeñas que se combinan
 
-## Estructura del JSON
+## 🚀 Instalación y Uso
+
+### Método 1: Ejecución Automática (Recomendado)
+
+```bash
+# Windows
+ejecutar.bat
+
+# Linux/Mac
+python bcv_scraper.py
+```
+
+### Método 2: Instalación Manual
+
+```bash
+# 1. Instalar dependencias
+pip install -r requirements.txt
+
+# 2. Ejecutar script
+python bcv_scraper.py
+```
+
+### Método 3: Configuración de Tarea Programada
+
+```bash
+# Windows - Configurar tarea diaria
+configurar_tarea.bat
+```
+
+## 📊 Estructura de Datos
+
+### JSON de Salida
 
 ```json
 [
   {
-    "fecha": "2024-01-15 18:00:00",
-    "precio_dolar": 36.5,
-    "timestamp": "2024-01-15T18:00:00.123456"
+    "fecha_extraccion": "2025-10-22 20:51:57",
+    "fecha_precio": "2025-10-23 00:00:00",
+    "precio_dolar": 212.4837,
+    "timestamp_extraccion": "2025-10-22T20:51:57.731987-04:00",
+    "timestamp_precio": "2025-10-23T00:00:00",
+    "zona_horaria": "America/Caracas (UTC-4)",
+    "nota": "Precio corresponde al día indicado en fecha_precio"
   }
 ]
 ```
 
-## Solución de Problemas
+### 🕐 Lógica de Fechas
 
-### Error de conexión
-- Verificar conexión a internet
-- El sitio del BCV puede estar temporalmente fuera de servicio
+El BCV actualiza el precio a las **6:00 AM** pero ese precio corresponde al **día siguiente**:
 
-### Error de dependencias
-- Ejecutar: `pip install -r requirements.txt`
+- **Antes de las 6:00 AM**: El precio corresponde al día actual
+- **Después de las 6:00 AM**: El precio corresponde al día siguiente
 
-### Precio no encontrado
-- El script incluye múltiples métodos de búsqueda
-- Revisar el archivo `bcv_scraper.log` para más detalles
+## 🔧 Configuración Avanzada
 
-## Contacto
+### Variables de Configuración
 
-Para reportar problemas o sugerencias, revisar los logs en `bcv_scraper.log`.
+```python
+# config.py
+BCV_URLS = [
+    'https://www.bcv.org.ve/',
+    'http://www.bcv.org.ve/',
+    'https://bcv.org.ve/'
+]
+
+TIMEZONE = 'America/Caracas'
+DATA_FILE = 'precio_dolar_bcv.json'
+LOG_FILE = 'bcv_scraper.log'
+```
+
+### Estrategias de Búsqueda
+
+El script utiliza múltiples estrategias para encontrar el precio:
+
+1. **Div específico** con `id='dolar'`
+2. **Texto con palabras clave** USD/Dólar
+3. **Tablas HTML** con datos de cambio
+4. **Selectores CSS** específicos
+
+## 🏛️ Paradigma de Programación
+
+### 🧮 Paradigma Funcional
+
+El proyecto utiliza **paradigma funcional** para mantener el código simple, directo y fácil de mantener:
+
+```python
+# Funciones puras sin efectos secundarios
+def extract_and_save_price() -> bool:
+    soup = fetch_page_content()      # 1. Obtener HTML
+    price = find_dollar_price(soup)  # 2. Extraer precio
+    return save_dollar_price(price)  # 3. Guardar datos
+```
+
+**Ventajas del Paradigma Funcional:**
+- ✅ **Código simple y directo**: Fácil de entender y mantener
+- ✅ **Funciones puras**: Sin efectos secundarios, fáciles de testear
+- ✅ **Inmutabilidad**: Previene bugs y facilita debugging
+- ✅ **Composición**: Funciones pequeñas que se combinan
+- ✅ **Bajo acoplamiento**: Fácil de modificar y extender
+
+## 📈 Programación Automática
+
+### Windows (Task Scheduler)
+
+1. Abrir "Programador de tareas"
+2. Crear tarea básica:
+   - **Nombre**: "BCV Dólar Scraper"
+   - **Frecuencia**: Diaria
+   - **Hora**: 18:00 (6 PM)
+   - **Programa**: `python`
+   - **Argumentos**: `bcv_scraper.py`
+
+### Linux/Mac (Cron)
+
+```bash
+# Editar crontab
+crontab -e
+
+# Agregar línea para ejecutar diariamente a las 6 PM
+0 18 * * * /usr/bin/python3 /ruta/completa/bcv_scraper.py
+```
+
+## 🌐 GitHub Actions (Opcional)
+
+Para ejecución en la nube:
+
+```yaml
+# .github/workflows/bcv-scraper.yml
+name: BCV Dólar Scraper
+on:
+  schedule:
+    - cron: '0 22 * * *'  # 6 PM Venezuela (UTC-4)
+  workflow_dispatch:
+```
+
+## 🛠️ Solución de Problemas
+
+### Error de Conexión
+- ✅ Verificar conexión a internet
+- ✅ El sitio del BCV puede estar temporalmente fuera de servicio
+- ✅ Revisar logs en `bcv_scraper.log`
+
+### Error de Dependencias
+```bash
+pip install -r requirements.txt
+```
+
+### Precio No Encontrado
+- ✅ El script incluye múltiples métodos de búsqueda
+- ✅ Revisar logs para detalles específicos
+- ✅ Verificar cambios en la estructura del sitio BCV
+
+## 📊 Monitoreo y Análisis
+
+### Logs Disponibles
+- **`bcv_scraper.log`**: Registro detallado de operaciones
+- **Consola**: Salida en tiempo real durante ejecución
+
+### Análisis de Datos
+Los datos se almacenan en `precio_dolar_bcv.json` y permiten:
+- 📈 Análisis de tendencias del dólar
+- 📅 Seguimiento histórico de precios
+- 🔍 Identificación de patrones temporales
+
+## 🔄 Extensibilidad
+
+### Agregar Nuevas Fuentes
+```python
+# En config.py
+BCV_URLS = [
+    'https://www.bcv.org.ve/',
+    'https://nueva-fuente.com/',  # Nueva fuente
+]
+```
+
+### Nuevas Estrategias de Búsqueda
+```python
+def nueva_estrategia(soup: BeautifulSoup) -> Optional[str]:
+    # Implementar nueva lógica de búsqueda
+    pass
+
+# Agregar a la lista de estrategias
+search_strategies.append(nueva_estrategia)
+```
+
+## 📝 Changelog
+
+### v2.0.0 - Lógica de Fechas Mejorada
+- ✅ Distinción entre fecha de extracción y fecha del precio
+- ✅ Lógica correcta para precios del BCV (actualización 6 AM)
+- ✅ Estructura JSON mejorada con timestamps precisos
+
+### v1.0.0 - Versión Inicial
+- ✅ Extracción básica del precio del dólar
+- ✅ Múltiples paradigmas de programación
+- ✅ Scripts de automatización
+
+## 🤝 Contribuciones
+
+Para contribuir al proyecto:
+1. Fork del repositorio
+2. Crear rama para nueva funcionalidad
+3. Implementar cambios
+4. Crear Pull Request
+
+## 📄 Licencia
+
+Este proyecto es de código abierto y está disponible bajo la licencia MIT.
+
+---
+
+**¡Monitorea el precio del dólar BCV de forma automática y confiable! 🇻🇪**

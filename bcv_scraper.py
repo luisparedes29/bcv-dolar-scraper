@@ -222,14 +222,37 @@ def find_dollar_price(soup: BeautifulSoup) -> Optional[float]:
     return None
 
 
+def calculate_price_date(extraction_time: datetime) -> datetime:
+    """
+    Calcula la fecha a la que corresponde el precio del dólar.
+    
+    El precio se actualiza a las 6:00 AM pero corresponde al día siguiente.
+    Si se extrae antes de las 6:00 AM, el precio corresponde al día actual.
+    Si se extrae después de las 6:00 AM, el precio corresponde al día siguiente.
+    """
+    # Si es antes de las 6:00 AM, el precio corresponde al día actual
+    if extraction_time.hour < 6:
+        return extraction_time.replace(hour=0, minute=0, second=0, microsecond=0)
+    else:
+        # Si es después de las 6:00 AM, el precio corresponde al día siguiente
+        from datetime import timedelta
+        next_day = extraction_time + timedelta(days=1)
+        return next_day.replace(hour=0, minute=0, second=0, microsecond=0)
+
+
 def create_price_entry(price: float) -> Dict[str, Any]:
-    """Crea una entrada de datos con timestamp"""
+    """Crea una entrada de datos con timestamp y fecha del precio"""
     now_venezuela = get_venezuela_time()
+    price_date = calculate_price_date(now_venezuela)
+    
     return {
-        'fecha': format_timestamp(now_venezuela),
+        'fecha_extraccion': format_timestamp(now_venezuela),
+        'fecha_precio': format_timestamp(price_date),
         'precio_dolar': price,
-        'timestamp': get_iso_timestamp(now_venezuela),
-        'zona_horaria': f'{TIMEZONE} (UTC-4)'
+        'timestamp_extraccion': get_iso_timestamp(now_venezuela),
+        'timestamp_precio': get_iso_timestamp(price_date),
+        'zona_horaria': f'{TIMEZONE} (UTC-4)',
+        'nota': 'Precio corresponde al día indicado en fecha_precio'
     }
 
 
