@@ -25,5 +25,86 @@
         "timestamp_precio": "2025-10-24T00:00:00",
         "zona_horaria": "America/Caracas (UTC-4)",
         "nota": "Precio corresponde al día indicado en fecha_precio"
+    },
+    {
+        "fecha_extraccion": "2025-10-24 17:13:46",
+        "fecha_precio": "2025-10-25 00:00:00",
+        "precio_dolar": 214.419,
+        "timestamp_extraccion": "2025-10-24T17:13:46.480083-04:00",
+        "timestamp_precio": "2025-10-25T00:00:00-04:00",
+        "zona_horaria": "America/Caracas (UTC-4)",
+        "nota": "Precio corresponde al día indicado en fecha_precio"
+    },
+    {
+        "fecha_extraccion": "2025-10-24 17:24:02",
+        "fecha_precio": "2025-10-25 00:00:00",
+        "precio_dolar": 214.419,
+        "timestamp_extraccion": "2025-10-24T17:24:02.368321-04:00",
+        "timestamp_precio": "2025-10-25T00:00:00-04:00",
+        "zona_horaria": "America/Caracas (UTC-4)",
+        "nota": "Precio corresponde al día indicado en fecha_precio"
+    },
+    {
+        "fecha_extraccion": "2025-10-24 17:24:19",
+        "fecha_precio": "2025-10-25 00:00:00",
+        "precio_dolar": 214.419,
+        "timestamp_extraccion": "2025-10-24T17:24:19.399434-04:00",
+        "timestamp_precio": "2025-10-25T00:00:00-04:00",
+        "zona_horaria": "America/Caracas (UTC-4)",
+        "nota": "Precio corresponde al día indicado en fecha_precio"
+    },
+    {
+        "fecha_extraccion": "2025-10-24 17:27:36",
+        "fecha_precio": "2025-10-25 00:00:00",
+        "precio_dolar": 214.419,
+        "timestamp_extraccion": "2025-10-24T17:27:36.023635-04:00",
+        "timestamp_precio": "2025-10-25T00:00:00-04:00",
+        "zona_horaria": "America/Caracas (UTC-4)",
+        "nota": "Precio corresponde al día indicado en fecha_precio"
+    },
+    {
+        "fecha_extraccion": "2025-10-24 17:36:41",
+        "fecha_precio": "2025-10-25 00:00:00",
+        "precio_dolar": 216.3714,
+        "timestamp_extraccion": "2025-10-24T17:36:41.607469-04:00",
+        "timestamp_precio": "2025-10-25T00:00:00-04:00",
+        "zona_horaria": "America/Caracas (UTC-4)",
+        "nota": "Precio corresponde al día indicado en fecha_precio"
+    },
+    {
+        "fecha_extraccion": "2025-10-24 17:42:21",
+        "fecha_precio": "2025-10-25 00:00:00",
+        "precio_dolar": 216.3714,
+        "timestamp_extraccion": "2025-10-24T17:42:21.121941-04:00",
+        "timestamp_precio": "2025-10-25T00:00:00-04:00",
+        "zona_horaria": "America/Caracas (UTC-4)",
+        "nota": "Precio corresponde al día indicado en fecha_precio"
+    },
+    {
+        "fecha_extraccion": "2025-10-24 17:44:12",
+        "fecha_precio": "2025-10-25 00:00:00",
+        "precio_dolar": 216.3714,
+        "timestamp_extraccion": "2025-10-24T17:44:12.963782-04:00",
+        "timestamp_precio": "2025-10-25T00:00:00-04:00",
+        "zona_horaria": "America/Caracas (UTC-4)",
+        "nota": "Precio corresponde al día indicado en fecha_precio"
+    },
+    {
+        "fecha_extraccion": "2025-10-24 17:45:43",
+        "fecha_precio": "2025-10-25 00:00:00",
+        "precio_dolar": 216.3714,
+        "timestamp_extraccion": "2025-10-24T17:45:43.912224-04:00",
+        "timestamp_precio": "2025-10-25T00:00:00-04:00",
+        "zona_horaria": "America/Caracas (UTC-4)",
+        "nota": "Precio corresponde al día indicado en fecha_precio"
+    },
+    {
+        "fecha_extraccion": "2025-10-24 17:46:59",
+        "fecha_precio": "2025-10-25 00:00:00",
+        "precio_dolar": 216.3714,
+        "timestamp_extraccion": "2025-10-24T17:46:59.153899-04:00",
+        "timestamp_precio": "2025-10-25T00:00:00-04:00",
+        "zona_horaria": "America/Caracas (UTC-4)",
+        "nota": "Precio corresponde al día indicado en fecha_precio"
     }
 ]

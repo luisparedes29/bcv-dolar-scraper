@@ -22,6 +22,7 @@ import pytz
 from typing import Optional, List, Dict, Any, Tuple
 from functools import partial
 from config import ScraperConfig
+from notifications import send_notifications
 
 # Configuración desde el módulo centralizado
 BCV_URLS = ScraperConfig.BCV_URLS
@@ -280,6 +281,26 @@ def save_dollar_price(price: float) -> bool:
         success = save_price_to_file(updated_data)
         if success:
             logging.info(f"Precio guardado: {price} Bs")
+            
+            # Enviar notificaciones si está habilitado
+            if ScraperConfig.NOTIFICATIONS_ENABLED:
+                try:
+                    notification_results = send_notifications(
+                        price=price,
+                        price_date=data_entry['fecha_precio'],
+                        extraction_time=data_entry['fecha_extraccion']
+                    )
+                    
+                    # Log de resultados de notificaciones
+                    if notification_results.get('email'):
+                        logging.info("✅ Notificación por email enviada")
+                    if notification_results.get('telegram'):
+                        logging.info("✅ Notificación por Telegram enviada")
+                        
+                except Exception as e:
+                    logging.warning(f"Error al enviar notificaciones: {e}")
+                    # No fallar el proceso principal por errores de notificación
+        
         return success
         
     except Exception as e:

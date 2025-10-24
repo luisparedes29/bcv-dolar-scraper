@@ -13,6 +13,8 @@ Este proyecto automatiza la extracción diaria del precio del dólar desde el si
 - 🛡️ **Robusto**: Múltiples estrategias de búsqueda y manejo de errores
 - 📝 **Logging Detallado**: Registro completo de todas las operaciones
 - ⚡ **Fácil Uso**: Scripts de ejecución automática
+- 📧 **Notificaciones**: Soporte para email y Telegram
+- 🔧 **Configuración Centralizada**: Gestión fácil de parámetros
 
 ## 🏗️ Arquitectura del Proyecto
 
@@ -22,6 +24,8 @@ Este proyecto automatiza la extracción diaria del precio del dólar desde el si
 ProyectoBCV/
 ├── 📄 bcv_scraper.py              # ✅ Script principal (Funcional)
 ├── 📄 config.py                  # ⚙️ Configuración centralizada
+├── 📄 notifications.py           # 📧 Sistema de notificaciones
+├── 📄 config_ejemplo.py          # 📋 Ejemplo de configuración
 ├── 📄 utils.py                   # 🔧 Utilidades reutilizables
 ├── 📄 requirements.txt           # 📦 Dependencias
 ├── 📄 ejecutar.bat              # 🚀 Script de ejecución (Windows)
@@ -94,6 +98,54 @@ El BCV actualiza el precio a las **6:00 AM** pero ese precio corresponde al **d�
 - **Antes de las 6:00 AM**: El precio corresponde al día actual
 - **Después de las 6:00 AM**: El precio corresponde al día siguiente
 
+## 📧 Sistema de Notificaciones
+
+### ✨ Características
+
+- 📧 **Notificaciones por Email**: Recibe el precio por correo electrónico
+- 📱 **Notificaciones por Telegram**: Recibe el precio por mensaje de Telegram
+- 🔧 **Configuración Flexible**: Habilita/deshabilita cada tipo de notificación
+- 🛡️ **Manejo de Errores**: Las notificaciones no afectan el proceso principal
+
+### 📧 Configurar Email (Gmail)
+
+1. **Habilita la verificación en 2 pasos** en tu cuenta de Google
+2. **Genera una "Contraseña de aplicación"**:
+   - Ve a: https://myaccount.google.com/security
+   - Selecciona "Contraseñas de aplicaciones"
+   - Genera una nueva contraseña para "Correo"
+3. **Configura en `config.py`**:
+   ```python
+   EMAIL_ENABLED = True
+   EMAIL_FROM = 'tu_email@gmail.com'
+   EMAIL_PASSWORD = 'tu_contraseña_de_aplicacion'
+   EMAIL_TO = 'destinatario@gmail.com'
+   ```
+
+### 📱 Configurar Telegram
+
+1. **Crea un bot en Telegram**:
+   - Busca @BotFather en Telegram
+   - Envía `/newbot`
+   - Sigue las instrucciones
+   - Copia el token
+2. **Obtén tu ID de chat**:
+   - Busca @userinfobot en Telegram
+   - Inicia conversación y te dará tu ID
+3. **Configura en `config.py`**:
+   ```python
+   TELEGRAM_ENABLED = True
+   TELEGRAM_BOT_TOKEN = '1234567890:ABCdefGHIjklMNOpqrsTUVwxyz'
+   TELEGRAM_CHAT_ID = '123456789'
+   ```
+
+### 🧪 Probar Notificaciones
+
+```bash
+# Probar el sistema de notificaciones
+python notifications.py
+```
+
 ## 🔧 Configuración Avanzada
 
 ### Variables de Configuración
@@ -109,6 +161,11 @@ BCV_URLS = [
 TIMEZONE = 'America/Caracas'
 DATA_FILE = 'precio_dolar_bcv.json'
 LOG_FILE = 'bcv_scraper.log'
+
+# Notificaciones
+NOTIFICATIONS_ENABLED = True
+EMAIL_ENABLED = True
+TELEGRAM_ENABLED = True
 ```
 
 ### Estrategias de Búsqueda
@@ -227,6 +284,13 @@ search_strategies.append(nueva_estrategia)
 ```
 
 ## 📝 Changelog
+
+### v3.0.0 - Sistema de Notificaciones
+- ✅ **Notificaciones por Email**: Soporte completo para Gmail con autenticación segura
+- ✅ **Notificaciones por Telegram**: Integración con bots de Telegram
+- ✅ **Configuración Centralizada**: Gestión unificada de parámetros
+- ✅ **Manejo de Errores Robusto**: Las notificaciones no afectan el proceso principal
+- ✅ **Documentación Completa**: Guías paso a paso para configuración
 
 ### v2.0.0 - Lógica de Fechas Mejorada
 - ✅ Distinción entre fecha de extracción y fecha del precio
