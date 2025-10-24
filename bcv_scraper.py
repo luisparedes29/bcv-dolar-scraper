@@ -21,24 +21,17 @@ from datetime import datetime
 import pytz
 from typing import Optional, List, Dict, Any, Tuple
 from functools import partial
+from config import ScraperConfig
 
-# Configuración
-BCV_URLS = [
-    'https://www.bcv.org.ve/',
-    'http://www.bcv.org.ve/',
-    'https://bcv.org.ve/'
-]
-
-HTTP_HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-}
-
-DATA_FILE = 'precio_dolar_bcv.json'
-LOG_FILE = 'bcv_scraper.log'
-REQUEST_TIMEOUT = 60
-TIMEZONE = 'America/Caracas'
-USD_KEYWORDS = ['USD', 'Dólar', 'Dollar']
-PRICE_PATTERN = re.compile(r'[\d,]+\.?\d*')
+# Configuración desde el módulo centralizado
+BCV_URLS = ScraperConfig.BCV_URLS
+HTTP_HEADERS = ScraperConfig.HTTP_HEADERS
+DATA_FILE = ScraperConfig.DATA_FILE
+LOG_FILE = ScraperConfig.LOG_FILE
+REQUEST_TIMEOUT = ScraperConfig.REQUEST_TIMEOUT
+TIMEZONE = ScraperConfig.TIMEZONE
+USD_KEYWORDS = ScraperConfig.USD_KEYWORDS
+PRICE_PATTERN = re.compile(ScraperConfig.PRICE_PATTERN)
 
 # Deshabilitar advertencias SSL
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -178,10 +171,7 @@ def search_in_tables(soup: BeautifulSoup) -> Optional[str]:
 
 def search_with_css_selectors(soup: BeautifulSoup) -> Optional[str]:
     """Busca precio usando selectores CSS específicos"""
-    selectors = [
-        '.dolar', '.usd', '.price', '.valor', '.tipo-cambio',
-        '[class*="dolar"]', '[class*="usd"]', '[class*="price"]'
-    ]
+    selectors = ScraperConfig.PRICE_SELECTORS
     
     for selector in selectors:
         elements = soup.select(selector)
