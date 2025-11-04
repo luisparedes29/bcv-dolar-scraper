@@ -89,3 +89,10 @@
 2025-11-03 22:24:43,614 - INFO - Email no configurado o deshabilitado
 2025-11-03 22:24:43,614 - INFO - Telegram no configurado o deshabilitado
 2025-11-03 22:24:43,615 - INFO - Proceso completado exitosamente
+2025-11-04 22:24:05,385 - INFO - Iniciando extracción del precio del dólar del BCV
+2025-11-04 22:24:05,385 - INFO - Accediendo a https://www.bcv.org.ve/
+2025-11-04 22:24:09,312 - INFO - Precio encontrado: 226,13050000
+2025-11-04 22:24:09,323 - INFO - Precio guardado: 226.1305 Bs
+2025-11-04 22:24:09,323 - INFO - Email no configurado o deshabilitado
+2025-11-04 22:24:09,323 - INFO - Telegram no configurado o deshabilitado
+2025-11-04 22:24:09,323 - INFO - Proceso completado exitosamente
