@@ -511,5 +511,14 @@
         "timestamp_precio": "2025-12-16T00:00:00-04:00",
         "zona_horaria": "America/Caracas (UTC-4)",
         "nota": "Precio corresponde al día indicado en fecha_precio"
+    },
+    {
+        "fecha_extraccion": "2025-12-16 18:23:11",
+        "fecha_precio": "2025-12-17 00:00:00",
+        "precio_dolar": 276.5769,
+        "timestamp_extraccion": "2025-12-16T18:23:11.167009-04:00",
+        "timestamp_precio": "2025-12-17T00:00:00-04:00",
+        "zona_horaria": "America/Caracas (UTC-4)",
+        "nota": "Precio corresponde al día indicado en fecha_precio"
     }
 ]
