@@ -915,3 +915,10 @@
 2026-03-02 22:33:03,028 - INFO - Email no configurado o deshabilitado
 2026-03-02 22:33:03,028 - INFO - Telegram no configurado o deshabilitado
 2026-03-02 22:33:03,028 - INFO - Proceso completado exitosamente
+2026-03-03 22:35:28,207 - INFO - Iniciando extracción del precio del dólar del BCV
+2026-03-03 22:35:28,207 - INFO - Accediendo a https://www.bcv.org.ve/
+2026-03-03 22:35:29,177 - INFO - Precio encontrado: 425,67410000
+2026-03-03 22:35:29,189 - INFO - Precio guardado: 425.6741 Bs
+2026-03-03 22:35:29,189 - INFO - Email no configurado o deshabilitado
+2026-03-03 22:35:29,190 - INFO - Telegram no configurado o deshabilitado
+2026-03-03 22:35:29,190 - INFO - Proceso completado exitosamente
