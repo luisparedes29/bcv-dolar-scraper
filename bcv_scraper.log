@@ -1111,3 +1111,10 @@
 2026-03-30 22:42:15,049 - INFO - Email no configurado o deshabilitado
 2026-03-30 22:42:15,050 - INFO - Telegram no configurado o deshabilitado
 2026-03-30 22:42:15,050 - INFO - Proceso completado exitosamente
+2026-03-31 22:39:07,131 - INFO - Iniciando extracción del precio del dólar del BCV
+2026-03-31 22:39:07,131 - INFO - Accediendo a https://www.bcv.org.ve/
+2026-03-31 22:39:08,460 - INFO - Precio encontrado: 473,91760000
+2026-03-31 22:39:08,472 - INFO - Precio guardado: 473.9176 Bs
+2026-03-31 22:39:08,472 - INFO - Email no configurado o deshabilitado
+2026-03-31 22:39:08,472 - INFO - Telegram no configurado o deshabilitado
+2026-03-31 22:39:08,472 - INFO - Proceso completado exitosamente
