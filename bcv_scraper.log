@@ -1881,3 +1881,10 @@
 2026-07-19 22:56:26,589 - INFO - Email no configurado o deshabilitado
 2026-07-19 22:56:26,590 - INFO - Telegram no configurado o deshabilitado
 2026-07-19 22:56:26,590 - INFO - Proceso completado exitosamente
+2026-07-20 23:03:49,507 - INFO - Iniciando extracción del precio del dólar del BCV
+2026-07-20 23:03:49,507 - INFO - Accediendo a https://www.bcv.org.ve/
+2026-07-20 23:03:50,765 - INFO - Precio encontrado: 737,23210000
+2026-07-20 23:03:50,772 - INFO - Precio guardado: 737.2321 Bs
+2026-07-20 23:03:50,772 - INFO - Email no configurado o deshabilitado
+2026-07-20 23:03:50,772 - INFO - Telegram no configurado o deshabilitado
+2026-07-20 23:03:50,772 - INFO - Proceso completado exitosamente
