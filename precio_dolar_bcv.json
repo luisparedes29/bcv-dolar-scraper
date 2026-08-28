@@ -2779,5 +2779,14 @@
         "timestamp_precio": "2026-08-27T00:00:00-04:00",
         "zona_horaria": "America/Caracas (UTC-4)",
         "nota": "Precio corresponde al día indicado en fecha_precio"
+    },
+    {
+        "fecha_extraccion": "2026-08-28 02:01:33",
+        "fecha_precio": "2026-08-28 00:00:00",
+        "precio_dolar": 791.6667,
+        "timestamp_extraccion": "2026-08-28T02:01:33.739743-04:00",
+        "timestamp_precio": "2026-08-28T00:00:00-04:00",
+        "zona_horaria": "America/Caracas (UTC-4)",
+        "nota": "Precio corresponde al día indicado en fecha_precio"
     }
 ]
