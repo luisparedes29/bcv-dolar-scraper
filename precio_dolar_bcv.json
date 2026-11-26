@@ -3589,5 +3589,14 @@
         "timestamp_precio": "2026-11-25T00:00:00-04:00",
         "zona_horaria": "America/Caracas (UTC-4)",
         "nota": "Precio corresponde al día indicado en fecha_precio"
+    },
+    {
+        "fecha_extraccion": "2026-11-26 00:01:08",
+        "fecha_precio": "2026-11-26 00:00:00",
+        "precio_dolar": 924.3534,
+        "timestamp_extraccion": "2026-11-26T00:01:08.805431-04:00",
+        "timestamp_precio": "2026-11-26T00:00:00-04:00",
+        "zona_horaria": "America/Caracas (UTC-4)",
+        "nota": "Precio corresponde al día indicado en fecha_precio"
     }
 ]
